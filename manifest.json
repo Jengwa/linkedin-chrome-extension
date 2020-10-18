@@ -1,0 +1,36 @@
+
+{
+    "manifest_version": 2,
+    "name": "Linkedin Extension",
+    "description": "This extension allows you to easly accept all pending linkedin requests",
+    "version": "1.0",
+  
+    "page_action": {
+      "default_popup": "popup.html",
+      "default_title": "Linkedin Extension ",
+      "default_icon" : "./images/logo-small.png"
+    },
+    "background": {
+      "scripts": [
+        "eventPage.js"
+      ],
+      "persistent": false
+    },
+
+    "content_scripts":[
+      {
+        "matches": ["https://www.linkedin.com/mynetwork/"],
+        "js":["content.js", "jquery.min.js"]
+      }
+    ]  
+    ,
+    "icons": {
+      "16": "./images/logo-small.png",
+      "48": "./images/logo-small.png",
+      "128": "./images/logo-small.png"
+    },
+    "permissions": [
+        "tabs",
+        "storage"
+    ]
+  }
